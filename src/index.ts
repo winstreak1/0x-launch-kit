@@ -63,6 +63,10 @@ function getRpcUrl(network: Network): string {
             return 'https://rinkeby.infura.io/';
         case 'ganache':
             return 'http://ganache:8545/';
+        case 'goerli':
+            return 'http://goerli:8545/';
+        case 'sepolia':
+            return 'http://sepolia:8545/';
         case 'custom':
             return 'http://localhost:8545/';
     }
@@ -91,6 +95,14 @@ async function main() {
         {
             name: 'Ganache',
             value: 'ganache',
+        },
+        {
+            name: 'Goerli',
+            value: 'goerli',
+        },
+        {
+            name: 'Sepolia',
+            value: 'sepolia',
         },
         {
             name: 'Custom',

@@ -1,4 +1,4 @@
-export type Network = 'mainnet' | 'kovan' | 'ropsten' | 'rinkeby' | 'ganache' | 'custom';
+export type Network = 'mainnet' | 'kovan' | 'ropsten' | 'rinkeby' | 'ganache' | 'goerli' | 'sepolia' | 'custom';
 
 export interface BuildOptions {
     tokenType: 'ERC20' | 'ERC721';
@@ -27,6 +27,8 @@ function getNetworkId(network: Network): number {
         case 'rinkeby':
             return 4;
         case 'ganache':
+        case 'goerli':
+        case 'sepolia':
         case 'custom':
             return 50;
     }
@@ -40,6 +42,8 @@ function getChainId(network: Network): number {
         case 'ropsten':
             return getNetworkId(network);
         case 'ganache':
+        case 'goerli':
+        case 'sepolia'
         case 'custom':
             return 1337;
     }
